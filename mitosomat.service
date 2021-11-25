@@ -1,0 +1,13 @@
+[Unit]
+Description=Mitosomat Service
+After=brickman.service
+Requisite=brickman.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/robot
+User=robot
+ExecStart=/usr/bin/micropython /home/robot/run.py
+
+[Install]
+WantedBy=default.target
